@@ -1,0 +1,55 @@
+<div style="text-align:center">
+    <h1>
+    Sign-up Page
+    </h1>
+    </div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+    <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <p><input formControlName="name" id=”username” placeholder="Username"></p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <p><input formControlName="email" id=”email” placeholder="Your email"></p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <p><input formControlName="email" id=”phone” placeholder="Phone number"></p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <p><input formControlName="password" id=”password” type=”password”
+    placeholder="Your password"></p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <p><button class="btn btn-primary" [disabled]="!agreed" type="submit">Register</button> </p>
+    </div>
+    </div>
+    </div>
+    </form>
+
+    <!--create a modal using ng-template directive -->
+<ng-template #content let-modal>
+    <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Terms and Conditions</h4>
+    <button type="button" class="close" aria-label="Close"
+    (click)="modal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+    <p> Your Terms and Condition statement here </p>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark"
+    (click)="modal.close('Save click')">Close</button>
+    </div>
+    </ng-template>
+    
+    
