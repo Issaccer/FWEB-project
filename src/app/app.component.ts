@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostsService } from './posts.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spaApp';
+
+  posts: any = [];
+  
+constructor(private postsService: PostsService) {
+this.postsService.getAllPosts().subscribe(posts => {
+this.posts = posts;
+});
+}
 }

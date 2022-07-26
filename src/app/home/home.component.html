@@ -1,7 +1,9 @@
 <ul>
-    <div class="card" *ngFor = "let games of games">
+    <div style="text-align:center" class="card" *ngFor = "let games of games">
     <h2> {{games.name}} </h2>
-    <img src ={{games.image}} height="120" width="140" />
-    <p> {{games.description}} </p>
+    <p><img src ={{games.image}} height="120" width="140"></p>
+    <p><button class="btn btn-primary" type="view" routerLink="/view"> Read More</button></p>
     </div>
     </ul> 
+
+    
