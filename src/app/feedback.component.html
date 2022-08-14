@@ -16,11 +16,13 @@
                     <option value="Valorant">Valorant</option>
                     <option value="Apex Legends">Apex Legends</option>
                     <option value="Minecraft">Minecraft</option>
+                    <option value="Genshin Impact">Genshin Impact</option>
+                    <option value="Mortal Kombat 11">Mortal Kombat 111</option>
                 </select>
             </div>
 
             <div>
-            <p><input formControlName="feedback" id=”feedback” placeholder="Your feedback"></p>
+            <p><input formControlName="post" id=”post” placeholder="feedback"></p>
             </div>
 
             <div class="row"> 
@@ -31,4 +33,17 @@
             </div>
             </form>
     </div>
+
+    <div class="row" *ngFor="let post of posts">
+        <div class="card card-block">
+            <h4>{{post.game}}</h4>
+            <p>{{post.post}}</p>
+            <input type="text" class="card-title" value={{post.name}}
+            id={{post._id}}_name>
+            <a href="javascript:void(0)" (click)="deletePost(post._id)" class="card-
+            link">Delete</a>
+            <a href="javascript:void(0)" (click)="updatePost(post._id)" class="card-
+            link">Update</a>
+        </div>
+        </div>
 </div>

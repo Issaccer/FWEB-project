@@ -7,7 +7,7 @@ import { PostsService } from './posts.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'spaApp';
+  title = 'List of Posts';
 
   posts: any = [];
   

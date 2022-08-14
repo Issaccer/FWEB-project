@@ -17,8 +17,8 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
-import { ViewComponent } from './view/view.component';
-import { FeedbackComponent } from './feedback/feedback.component';
+import { ViewComponent } from './view.component';
+import { FeedbackComponent } from './feedback.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     NgbModule,
     HttpClientModule
   ],
-  providers: [UserService, PostsService, AuthService],
+  providers: [AuthService, UserService, PostsService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

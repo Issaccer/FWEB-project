@@ -1,0 +1,25 @@
+<!-- <div style="text-align:center" class="card" *ngFor="let games of games">
+<h2>{{games.name}}</h2>
+<p>The product selected has id: {{id}}</p>
+</div> -->
+<form class="card" *ngFor="let games of games">
+    <div class="center">
+        <img src = {{games.image}} height= "400" width= "500" class="center"/>
+        <div style="text-align:left">
+            <h1>
+                {{games.name}}
+            </h1>
+        </div>
+        <div class="content">
+            <b>Description:</b>
+            <div>
+                <p>{{games.description}}</p>
+            </div>
+            <b>Type:</b>
+            <div>
+                <p>{{games.type}}</p>
+            </div>
+        </div>
+        <button class="btn btn-primary"  type="view" (click)="deletePost(post._id)">Delete Listing</button>
+    </div>
+</form>

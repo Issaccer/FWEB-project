@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-home',
@@ -7,26 +9,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private list: PostsService) { }
 
-  ngOnInit(): void {
-  }
+  listing: any = []
+
+  ngOnInit(): void{
+    this.list.getAllPosts().subscribe(data => {
+      this.listing = data;
+      console.log('this.listing: ', this.listing)
+    });
+  };
+
+  routeToSelected(index: number) {
+    console.log('Go to index', index);
+    this.router.navigate(['/view', this.listing[index]._id
+    ]);
+  };
 
   title = 'List of Games';
-  
-  games = [ {
-  "id": 1,
-  "name": "Valorant",
-  "image": "./assets/valorant.png"
+
+  games = [{
+    "id": 1,
+    "name": "Valorant",
+    "image": "./assets/valorant.png"
   },
   {
-  "id": 2,
-  "name": "Apex Legends",
-  "image": "./assets/apex-legends.jpg"
+    "id": 2,
+    "name": "Apex Legends",
+    "image": "./assets/apex-legends.jpg"
   },
   {
-  "id": 3,
-  "name": "Minecraft",
-  "image": "./assets/minecraft.jpg"
-  } ];
+    "id": 3,
+    "name": "Minecraft",
+    "image": "./assets/minecraft.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Genshin Impact",
+    "image": "./assets/Genshin-Impact.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Mortal Kombat 11",
+    "image": "./assets/mortal kombat 11.jpg"
+  },
+  ];
 }
+

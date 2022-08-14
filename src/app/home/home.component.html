@@ -1,9 +1,8 @@
-<ul>
-    <div style="text-align:center" class="card" *ngFor = "let games of games">
-    <h2> {{games.name}} </h2>
-    <p><img src ={{games.image}} height="120" width="140"></p>
-    <p><button class="btn btn-primary" type="view" routerLink="/view"> Read More</button></p>
+<div class="container">
+    <div style="text-align:center" class="card" *ngFor="let games of games; let i = index">
+        <h2> {{games.name}} </h2>
+        <p><img src={{games.image}} height="120" width="140"></p>
+        <button class="btn btn-primary"  type="view" (click)="routeToSelected(i)">See More</button>
     </div>
-    </ul> 
-
-    
+    <router-outlet></router-outlet>
+</div>

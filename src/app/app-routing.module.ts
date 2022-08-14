@@ -7,8 +7,8 @@ import { LoginComponent } from './login/login.component';
 import {LogoutComponent} from './logout/logout.component';
 import {UserComponent} from './user/user.component';
 import {AdminComponent} from './admin/admin.component';
-import { ViewComponent } from './view/view.component';
-import { FeedbackComponent } from "./feedback/feedback.component";
+import { ViewComponent } from './view.component';
+import { FeedbackComponent } from "./feedback.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,9 +19,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full'},
   { path: 'logout', component:LogoutComponent},
   { path: 'feedback', component: FeedbackComponent, pathMatch: 'full'},
-  { path: 'view', component: ViewComponent, pathMatch: 'full'},
+  { path: 'view/:id', component: ViewComponent },
   { path: 'user', component:UserComponent},
-  { path: 'admin', component:AdminComponent}];
+  { path: 'admin', component:AdminComponent},
+  { path: '', component:LoginComponent, pathMatch:'full'}];
 
 
 @NgModule({
