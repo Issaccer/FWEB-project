@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, pathMatch: 'full'},
   { path: 'logout', component:LogoutComponent},
   { path: 'feedback', component: FeedbackComponent, pathMatch: 'full'},
-  { path: 'view/:id', component: ViewComponent },
+  { path: 'view', component: ViewComponent },
   { path: 'user', component:UserComponent},
   { path: 'admin', component:AdminComponent},
   { path: '', component:LoginComponent, pathMatch:'full'}];

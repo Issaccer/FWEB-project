@@ -16,16 +16,6 @@ export class HomeComponent {
   listing: any = []
 
   ngOnInit(): void{
-    this.list.getAllPosts().subscribe(data => {
-      this.listing = data;
-      console.log('this.listing: ', this.listing)
-    });
-  };
-
-  routeToSelected(index: number) {
-    console.log('Go to index', index);
-    this.router.navigate(['/view', this.listing[index]._id
-    ]);
   };
 
   title = 'List of Games';
